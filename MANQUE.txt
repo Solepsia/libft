@@ -1,1 +1,1 @@
-memmove memchr memcmp atoi
+memmove memchr memcmp atoi itoa strsplit
