@@ -1,1 +1,1 @@
-memmove memchr memcmp atoi itoa strsplit
+Rajouter les fonctions de manipulation de listes dans libft.h et dans le Makefile.
