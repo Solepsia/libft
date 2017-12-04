@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grota <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 12:58:35 by grota             #+#    #+#             */
-/*   Updated: 2017/11/24 15:13:55 by grota            ###   ########.fr       */
+/*   Created: 2017/11/22 15:10:18 by grota             #+#    #+#             */
+/*   Updated: 2017/11/24 13:24:34 by grota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*schar1;
+	unsigned char	*schar2;
 
-	if (s)
+	schar1 = (unsigned char *)s1;
+	schar2 = (unsigned char *)s2;
+	i = 0;
+	if (s1 && s2 && n)
 	{
-		i = ft_strlen(s);
-		while (i)
-			s[i--] = '\0';
-		s[0] = '\0';
+		while (i < n)
+		{
+			if (schar1[i] != schar2[i])
+				return (schar1[i] - schar2[i]);
+			else
+				i++;
+		}
 	}
+	return (0);
 }

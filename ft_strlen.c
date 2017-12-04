@@ -6,7 +6,7 @@
 /*   By: grota <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:01:34 by grota             #+#    #+#             */
-/*   Updated: 2017/11/20 13:01:35 by grota            ###   ########.fr       */
+/*   Updated: 2017/11/24 15:06:03 by grota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i])
 		i++;
 	return (i);

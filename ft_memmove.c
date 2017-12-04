@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grota <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 12:58:35 by grota             #+#    #+#             */
-/*   Updated: 2017/11/24 15:13:55 by grota            ###   ########.fr       */
+/*   Created: 2017/11/22 14:55:06 by grota             #+#    #+#             */
+/*   Updated: 2017/11/24 14:53:13 by grota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	size_t	i;
+	char	*tmp;
 
-	if (s)
-	{
-		i = ft_strlen(s);
-		while (i)
-			s[i--] = '\0';
-		s[0] = '\0';
-	}
+	if (!dest && !src)
+		return (NULL);
+	if (!(tmp = (char *)malloc(sizeof(char) * len)))
+		return (NULL);
+	ft_memcpy(tmp, src, len);
+	ft_memcpy(dest, tmp, len);
+	free(tmp);
+	return (dest);
 }

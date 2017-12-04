@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grota <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 12:58:35 by grota             #+#    #+#             */
-/*   Updated: 2017/11/24 15:13:55 by grota            ###   ########.fr       */
+/*   Created: 2017/11/22 15:04:40 by grota             #+#    #+#             */
+/*   Updated: 2017/11/22 15:17:14 by grota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
 
-	if (s)
+	i = 0;
+	while (i < n)
 	{
-		i = ft_strlen(s);
-		while (i)
-			s[i--] = '\0';
-		s[0] = '\0';
+		if (((unsigned char *)s)[i] == (unsigned char)c)
+			return ((void *)&((unsigned char *)s)[i]);
+		i++;
 	}
+	return (NULL);
 }

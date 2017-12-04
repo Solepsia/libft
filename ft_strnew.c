@@ -6,7 +6,7 @@
 /*   By: grota <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:02:47 by grota             #+#    #+#             */
-/*   Updated: 2017/11/20 13:02:48 by grota            ###   ########.fr       */
+/*   Updated: 2017/11/22 17:31:16 by grota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@ char	*ft_strnew(size_t size)
 	size_t	i;
 
 	i = 0;
-	if ((str = (char *)malloc(size)))
-	{
-		while (i < size)
-			str[i++] = '\0';
-		return (str);
-	}
-	else
+	if (!(str = (char *)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
+	while (i < size)
+		str[i++] = '\0';
+	str[i] = '\0';
+	return (str);
 }

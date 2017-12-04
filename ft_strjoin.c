@@ -6,7 +6,7 @@
 /*   By: grota <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:01:13 by grota             #+#    #+#             */
-/*   Updated: 2017/11/20 13:01:14 by grota            ###   ########.fr       */
+/*   Updated: 2017/11/22 17:15:21 by grota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	size_t	size;
 	char	*d;
 
+	i = 0;
+	j = 0;
 	size = ft_strlen(s1) + ft_strlen(s2);
-	d = ft_strnew(size + 1);
+	d = ft_strnew(size);
 	if (!d)
 		return (NULL);
 	while (s1[j])
@@ -28,5 +30,5 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	j = 0;
 	while (s2[j])
 		d[i++] = s2[j++];
-	return (d)
+	return (d);
 }

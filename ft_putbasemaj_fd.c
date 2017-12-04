@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putbasemaj_fd.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: grota <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/24 13:20:29 by grota             #+#    #+#             */
+/*   Updated: 2017/11/24 13:36:56 by grota            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-size_t	ft_putbasemaj_fd(int n, unsigned int base, int fd)
+size_t	ft_putbasemaj_fd(int n, int base, int fd)
 {
 	if (base < 2)
 		return (0);
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		n = -n;
+		n = (unsigned int)n;
 	}
 	if (n > base - 1)
 	{

@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grota <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 12:58:35 by grota             #+#    #+#             */
-/*   Updated: 2017/11/24 15:13:55 by grota            ###   ########.fr       */
+/*   Created: 2017/11/22 14:52:06 by grota             #+#    #+#             */
+/*   Updated: 2017/11/24 14:54:48 by grota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+int		ft_atoi(const char *str)
 {
-	size_t	i;
+	int		i;
+	int		neg;
+	int		r;
 
-	if (s)
+	i = 0;
+	neg = 1;
+	r = 0;
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '-')
+		neg = -1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		i = ft_strlen(s);
-		while (i)
-			s[i--] = '\0';
-		s[0] = '\0';
+		r = r * 10 + (int)(str[i] - '0');
+		i++;
 	}
+	return (r * neg);
 }

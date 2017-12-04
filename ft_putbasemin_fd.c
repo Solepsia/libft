@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putbasemin_fd.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: grota <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/24 13:22:31 by grota             #+#    #+#             */
+/*   Updated: 2017/11/24 13:37:28 by grota            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-size_t	ft_putbasemin_fd(int n, unsigned int base, int fd)
+size_t	ft_putbasemin_fd(int n, int base, int fd)
 {
 	if (base < 2)
 		return (0);

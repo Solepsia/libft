@@ -6,7 +6,7 @@
 /*   By: grota <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 12:58:28 by grota             #+#    #+#             */
-/*   Updated: 2017/11/20 12:58:29 by grota            ###   ########.fr       */
+/*   Updated: 2017/11/27 11:20:09 by grota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ char	*ft_strchr(const char *s, int c)
 	size_t	i;
 
 	i = 0;
+	if (c == '\0')
+		return ((char *)&s[ft_strlen(s)]);
 	while (s[i])
 	{
 		if (s[i] == c)
-			return (&s[i]);
+			return ((char *)&s[i]);
 		i++;
 	}
 	return (NULL);

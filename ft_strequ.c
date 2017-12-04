@@ -6,7 +6,7 @@
 /*   By: grota <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 12:59:57 by grota             #+#    #+#             */
-/*   Updated: 2017/11/20 12:59:58 by grota            ###   ########.fr       */
+/*   Updated: 2017/11/24 15:28:28 by grota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		ft_strequ(const char *s1, const char *s2)
 {
-	return(ft_strcmp(s1, s2) == 0)
+	return (ft_strcmp(s1, s2) == 0);
 }
