@@ -1,2 +1,0 @@
-Rajouter les fonctions de manipulation de listes dans libft.h et dans le Makefile.
-Rajouter aussi les fonctions putbase dedans.
